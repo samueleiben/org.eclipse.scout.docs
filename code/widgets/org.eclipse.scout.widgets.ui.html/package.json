@@ -17,7 +17,14 @@
     "npm": ">=8.1.0",
     "pnpm": ">=6.22.2"
   },
-  "main": "./src/main/js/index.js",
+  "exports": {
+    "production": {
+      "import": "./target/dist/prod/widgets-esm.min.js",
+      "default": "./target/dist/prod/widgets-browser-todo.min.js"
+    },
+    "import": "./target/dist/dev/widgets-esm.js",
+    "default": "./target/dist/dev/widgets-browser-todo.min.js"
+  },
   "files": [
     "src/main/resources/WebContent",
     "src/main/js"
